@@ -4,8 +4,8 @@ const CONFIG = {
 
 // Reemplaza estas frases cuando tengas los mensajes definitivos.
 const flowerMessages = [
-  'Eres la parte más bonita de todos mis días.',
-  'La distancia solo confirma cuánto deseo volver a abrazarte.',
+  'Te extraño y te pienso todos los días, incluso en los momentos más simples.',
+  'La distancia solo hace que tenga más ganas de nuestro primer abrazo.',
   'Tu sonrisa siempre encuentra la forma de iluminarme.',
   'Te elegiría a ti, una y mil veces, sin importar los kilómetros.',
   'Estas flores durarán un momento; lo que siento por ti, muchísimo más.',
