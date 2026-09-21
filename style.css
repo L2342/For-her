@@ -843,6 +843,7 @@ body { overflow-x: hidden; background: var(--color-bg); color: var(--color-text)
 }
 
 .hero__header { position: relative; z-index: 6; width: min(100%, 46rem); margin: 0 auto; }
+.hero__header { pointer-events: none; }
 .hero__title { max-width: 15ch; margin: 0 auto 0.55rem; color: var(--color-rose); font-size: clamp(2rem, 7vw, 3.8rem); line-height: 0.98; text-wrap: balance; }
 .hero__subtitle { max-width: 54ch; margin: 0 auto; color: var(--color-text-muted); font-size: clamp(0.84rem, 2.7vw, 1.05rem); line-height: 1.42; text-wrap: balance; }
 .hero__scene { width: min(100%, 68rem); min-height: 23rem; }
