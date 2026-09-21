@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffdf0">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Para ti 🌻">
+  <meta property="og:description" content="Un regalo para abrir con calma.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BB%3C/text%3E%3C/svg%3E">
+  <title>Para ti</title>
+
+  <!-- Tipografías: Cormorant Garamond (títulos, con aire literario) + Karla (texto, cálida y legible) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="splash-open">
+
+  <section class="splash" id="splash" aria-labelledby="splash-title">
+    <div class="splash__falling" id="falling-petals" aria-hidden="true"></div>
+
+    <header class="splash__copy">
+      <p class="splash__eyebrow">De Colombia a Perú con amor... <span aria-hidden="true">✈&#65039; 💛</span></p>
+      <h1 class="splash__title" id="splash-title">
+        Porque la distancia no te va a dejar sin tus flores
+        <strong>este 21 de septiembre.</strong>
+      </h1>
+    </header>
+
+    <div class="splash__scene">
+      <img class="splash__person splash__person--her" src="assets/ChibiHer1.png" alt="Ella con un vestido de flores">
+
+      <div class="splash__gift">
+        <img class="splash__envelope" src="assets/SobreCerrado.png" alt="Un sobre cerrado con un girasol">
+        <img class="splash__bouquet" src="assets/RamoFlores.png" alt="Un ramo de girasoles y flores amarillas">
+        <button class="gift-button" id="open-gift" type="button" aria-label="Abrir mi regalo">
+          <img src="assets/AbrirRegalo.png" alt="" aria-hidden="true">
+        </button>
+        <button class="continue-button" id="continue-gift" type="button">Continuar</button>
+      </div>
+
+      <img class="splash__person splash__person--him" src="assets/Chibime1.png" alt="Él con chaqueta negra y jeans">
+    </div>
+
+  </section>
+
+  <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Silenciar efectos" aria-pressed="false">
+    <span class="sound-toggle__on" aria-hidden="true">♪</span>
+    <span class="sound-toggle__off" aria-hidden="true">×</span>
+  </button>
+
+  <main>
+    <section class="hero" id="inicio" tabindex="-1" aria-labelledby="hero-title">
+      <header class="hero__header">
+        <p class="section-label">Un jardín solo para ti</p>
+        <h1 class="hero__title" id="hero-title">¡Feliz 21 de septiembre, mi amor!</h1>
+        <p class="hero__subtitle">Aunque nos separan los kilómetros, estas flores son para ti. Toca las flores del ramo para descubrir sus mensajes.</p>
+      </header>
+
+      <div class="hero__scene">
+        <img class="hero__character hero__character--her" src="assets/chibiherfeliz.png" alt="Ella recibiendo las flores con alegría">
+
+        <div class="interactive-bouquet" aria-label="Ramo con cinco mensajes por descubrir">
+          <div class="interactive-bouquet__glow" aria-hidden="true"></div>
+          <img class="interactive-bouquet__image" src="assets/RamoFlores.png" alt="Ramo de girasoles y tulipanes">
+          <button class="flower-hotspot flower-hotspot--1" type="button" data-flower="0" aria-label="Descubrir mensaje de la primera flor"></button>
+          <button class="flower-hotspot flower-hotspot--2" type="button" data-flower="1" aria-label="Descubrir mensaje de la segunda flor"></button>
+          <button class="flower-hotspot flower-hotspot--3" type="button" data-flower="2" aria-label="Descubrir mensaje de la tercera flor"></button>
+          <button class="flower-hotspot flower-hotspot--4" type="button" data-flower="3" aria-label="Descubrir mensaje de la cuarta flor"></button>
+          <button class="flower-hotspot flower-hotspot--5" type="button" data-flower="4" aria-label="Descubrir mensaje de la quinta flor"></button>
+        </div>
+
+        <img class="hero__character hero__character--him" src="assets/ChibimeRamo.png" alt="Él entregando un ramo de flores">
+      </div>
+
+      <div class="hero__footer">
+        <p class="flower-progress" id="flower-progress" aria-live="polite">Has descubierto 0 de 5 flores 🌻</p>
+        <div class="flower-dots" id="flower-dots" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button class="story-button" id="continue-story" type="button" disabled>Descubre las 5 flores</button>
+      </div>
+
+      <dialog class="flower-modal" id="flower-modal" aria-labelledby="flower-message">
+        <div class="flower-modal__content">
+          <img class="flower-modal__frame" src="assets/marco1.png" alt="" aria-hidden="true">
+          <button class="flower-modal__close" type="button" aria-label="Cerrar mensaje">×</button>
+          <p class="flower-modal__message" id="flower-message"></p>
+        </div>
+      </dialog>
+    </section>
+
+    <section class="distance" id="mensaje" aria-labelledby="distance-title">
+      <img class="distance__ribbon" src="assets/Ribbons decoration 2.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="distance__content reveal">
+        <p class="section-label">Colombia · Perú</p>
+        <h2 id="distance-title">La distancia cambia el mapa,<br>no lo que siento por ti.</h2>
+        <p>Cada llamada, cada mensaje y cada pequeño momento contigo hace que los kilómetros se sientan un poquito menos grandes.</p>
+      </div>
+      <div class="distance__details reveal" aria-label="Tres promesas para ti">
+        <p><span>01</span> Seguir eligiéndote incluso en los días difíciles.</p>
+        <p><span>02</span> Cuidar lo nuestro con paciencia y ternura.</p>
+        <p><span>03</span> Contar los días para volver a abrazarte.</p>
+      </div>
+      <button class="story-button distance__next reveal" type="button" data-scroll-target="#ruta">Ver el mapa</button>
+    </section>
+
+    <section class="route" id="ruta" aria-labelledby="route-title">
+      <header class="route__header reveal">
+        <p class="section-label">Bogotá · Lima</p>
+        <h2 id="route-title">El camino que nos une</h2>
+        <p class="route__hint">Toca cada pin para vernos en el mapa.</p>
+      </header>
+
+      <div class="route__map">
+        <img class="route__map-image" src="assets/map.png" alt="Mapa de Sudamérica con Bogotá y Lima marcadas" loading="lazy" decoding="async">
+
+        <button class="route__pin route__pin--bogota" type="button" aria-label="Bogotá" aria-expanded="false">
+          <img class="route__pin-art" src="assets/colombiaPin.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <span class="route__tip">
+            <img src="assets/Chibime1.png" alt="Él en Bogotá" loading="lazy" decoding="async">
+            <span>Aquí te pienso</span>
+          </span>
+        </button>
+
+        <button class="route__pin route__pin--lima" type="button" aria-label="Lima" aria-expanded="false">
+          <img class="route__pin-art" src="assets/peruPin.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <span class="route__tip">
+            <img src="assets/ChibiHer1.png" alt="Ella en Lima" loading="lazy" decoding="async">
+            <span>Aquí estás tú</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="route__card">
+        <img class="route__card-accent route__card-accent--a" src="assets/SingleFlower Decoration.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <img class="route__card-accent route__card-accent--b" src="assets/SingleFlower Decoration.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <span class="route__km" id="route-km">0 KM</span>
+        <span class="route__note">de distancia, y ni un día sin pensarte</span>
+      </div>
+    </section>
+
+    <section class="question" id="pregunta" aria-labelledby="question-title">
+      <div class="question__card">
+        <p class="section-label">Nuestro primer encuentro</p>
+        <h2 id="question-title">Tengo una pregunta muy importante sobre nuestro primer encuentro... <span aria-hidden="true">✈️💛</span></h2>
+        <p class="question__text">Dime la verdad: ¿crees que vas a poder aguantar los nervios de nuestro primer beso cuando nos tengamos de frente?</p>
+
+        <div class="question__actions">
+          <button class="question__yes" id="question-yes" type="button">Obvio no, ven ya 👀</button>
+          <button class="question__no" id="question-no" type="button">Yo controlo la situación 😜</button>
+        </div>
+
+        <button class="story-button question__next" id="question-next" type="button" data-scroll-target="#sobres" hidden>Seguir</button>
+      </div>
+
+      <p class="question__toast" id="question-toast" role="status" aria-live="polite"></p>
+
+      <dialog class="flower-modal" id="question-modal" aria-labelledby="question-modal-text">
+        <div class="flower-modal__content">
+          <img class="flower-modal__frame" src="assets/marco3.png" alt="" aria-hidden="true">
+          <button class="flower-modal__close" type="button" aria-label="Cerrar mensaje">×</button>
+          <p class="flower-modal__message" id="question-modal-text">¡Sabía que no ibas a aguantar! Queda oficialmente reservado 💋</p>
+        </div>
+      </dialog>
+    </section>
+
+    <section class="letters" id="sobres" aria-labelledby="letters-title">
+      <header class="letters__header">
+        <p class="section-label">Cartitas guardadas</p>
+        <h2 id="letters-title">Sobres para cuando me extrañes... <span aria-hidden="true">💌🌻</span></h2>
+        <p class="letters__subtitle">Guardé estas cartitas aquí para que las abras exactamente cuando más las necesites.</p>
+      </header>
+
+      <ul class="letters__grid" id="letters-grid"></ul>
+
+      <dialog class="letter-modal" id="letter-modal" aria-labelledby="letter-modal-title">
+        <button class="letter-modal__close" id="letter-modal-close" type="button" aria-label="Cerrar carta">×</button>
+        <p class="letter-modal__tag" id="letter-modal-tag"></p>
+        <h3 class="letter-modal__title" id="letter-modal-title"></h3>
+        <p class="letter-modal__text" id="letter-modal-text"></p>
+        <div class="letter-modal__audio" id="letter-modal-audio" hidden></div>
+      </dialog>
+    </section>
+
+    <section class="letter" id="carta" aria-labelledby="letter-title">
+      <img class="letter__decoration letter__decoration--flowers" src="assets/flower decorations 1.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="letter__decoration letter__decoration--hearts" src="assets/Heart Decorations 3.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="letter__content reveal">
+        <p class="section-label">Una nota para ti</p>
+        <h2 id="letter-title">Donde estés, ahí florece mi cariño</h2>
+        <p>No podía entregarte estas flores con mis propias manos, así que quise hacer un lugar donde pudieras encontrarlas siempre.</p>
+        <p>Gracias por hacer que la espera valga la pena y por convertir la distancia en otra forma de querernos.</p>
+        <p class="letter__signature">Con todo mi amor,<br><strong>para ti.</strong></p>
+      </div>
+    </section>
+
+    <section class="final" id="reencuentro" aria-labelledby="final-title">
+      <header class="final__header">
+        <p class="section-label">El reencuentro</p>
+        <h2 id="final-title">La promesa de nuestro primer encuentro... <span aria-hidden="true">🌻✨</span></h2>
+      </header>
+
+      <div class="final__stage">
+        <img class="final__chibi final__chibi--her" src="assets/chibiherfeliz.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+
+        <figure class="final__frame">
+          <span class="final__photo-wrap">
+            <img class="final__flower final__flower--a" src="assets/SingleFlower Decoration.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <img class="final__flower final__flower--b" src="assets/SingleFlower Decoration.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <img class="final__photo" src="assets/us_kissing.png" alt="Nosotros dos dándonos un beso" loading="lazy" decoding="async">
+          </span>
+          <figcaption class="final__note">Esta foto la hizo una IA, todavía no tenemos una así. Y aun sabiéndolo, se volvió una de mis favoritas: es exactamente lo que quiero que pase.</figcaption>
+        </figure>
+
+        <img class="final__chibi final__chibi--him" src="assets/ChibimeRamo.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      </div>
+
+      <p class="final__promise">Las flores amarillas de hoy son virtuales, pero la promesa de volver a darte un beso así de grande en nuestro primer encuentro es 100% real. Te amo.</p>
+
+      <button class="final__cta" id="final-cta" type="button">Mandar un beso de vuelta 💋</button>
+      <p class="final__hint" id="final-hint" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="love" id="teamo" aria-labelledby="love-title">
+      <img class="love__flower" src="assets/SingleFlower Decoration.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <h2 class="love__title" id="love-title">Te amo</h2>
+      <p class="love__until">hasta 2029</p>
+      <button class="final__back" type="button" data-scroll-target="#inicio">Volver al ramo</button>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
